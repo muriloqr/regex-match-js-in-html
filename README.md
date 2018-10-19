@@ -6,7 +6,7 @@ A regex to match/avoid JS in HTML. (May not be fully guaranteed)
 /(<script[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>)|(((?<=\<))?((on.+?)([ ]+)?=([ ]+)?["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?)((?=\>))?)|(on.+?)\w+/gi
 ~~~
 
-### Use for Javascript
+### Usage for Javascript
 #### Example
 ~~~js
 let maliciousHtml = `
