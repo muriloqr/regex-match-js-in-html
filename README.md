@@ -30,3 +30,14 @@ let safeHtml = maliciousHtml.replace(/(<script[^<]*(?:(?!<\/script>)<[^<]*)*<\/s
 //  </div>
 
 ~~~
+
+### Usage for Java
+#### Example
+~~~java
+String maliciousHtml = "<div onmouseover=\"window.location.reload()\"><h1> Hello, there is a html!<h1><script>let pwd = prompt(\"Write your password here:\"); </script>  </div>";
+
+String safeHtml = maliciousHtml.replaceAll("(<script[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>)|(((?<=\\<))?((on.+?)([ ]+)?=([ ]+)?[\"']?((?:.(?![\"']?\\s+(?:\\S+)=|[>\"']))+.)[\"']?)((?=\\>))?)|(on.+?)\\w+|(action)|(method)", "");
+
+// safeHtml now is: <div ><h1> Hello, there is a html!<h1>  </div>
+
+~~~
