@@ -2,8 +2,13 @@
 A regex to match/avoid JS in HTML. (May not be fully guaranteed)
 
 #### Regex
+##### JS
 ~~~js
 /(<script[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>)|(((?<=\<))?((on.+?)([ ]+)?=([ ]+)?["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?)((?=\>))?)|(on.+?)\w+/gi
+~~~
+##### Java
+~~~java
+(<script[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>)|(((?<=\\<))?((on.+?)([ ]+)?=([ ]+)?[\"']?((?:.(?![\"']?\\s+(?:\\S+)=|[>\"']))+.)[\"']?)((?=\\>))?)|(on.+?)\\w+|(action)|(method)
 ~~~
 
 ### Usage for Javascript
